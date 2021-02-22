@@ -43,8 +43,7 @@ extension UIColor {
 
 public class LicensesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     static public func instantiate() -> LicensesViewController {
-        let bundle = Bundle(for: LicensesViewController.self)
-        let storyboard = UIStoryboard(name: "Licenses", bundle: bundle)
+        let storyboard = UIStoryboard(name: "Licenses", bundle: Bundle.module)
         return storyboard.instantiateInitialViewController() as! LicensesViewController
     }
     

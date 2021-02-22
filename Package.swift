@@ -1,4 +1,4 @@
-// swift-tools-version:5.0
+// swift-tools-version:5.3
 import PackageDescription
 
 let package = Package(
@@ -10,6 +10,11 @@ let package = Package(
         .library(name: "Licenses", targets: [ "Licenses" ]),
     ],
     targets: [
-        .target(name: "Licenses", dependencies: [ ], path: "Licenses/Sources")
+        .target(
+            name: "Licenses",
+            dependencies: [ ],
+            path: "Licenses/Sources",
+            resources: [ .process("Licenses.storyboard") ]
+        )
     ]
 )
