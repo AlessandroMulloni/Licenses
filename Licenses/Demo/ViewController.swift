@@ -27,10 +27,7 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBAction func showLicenseUI(_ sender: Any) {
-        let bundle = Bundle(for: LicensesViewController.self)
-        let storyboard = UIStoryboard(name: "Licenses", bundle: bundle)
-        
-        let licenseVC = storyboard.instantiateInitialViewController() as! LicensesViewController
+        let licenseVC = LicensesViewController.instantiate()
         licenseVC.title = "Licenses"
         licenseVC.loadLicenseList(name: "licenses", viewStyle: .DESC)
         licenseVC.analytics = self
@@ -38,10 +35,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func showLicenseUIURL(_ sender: Any) {
-        let bundle = Bundle(for: LicensesViewController.self)
-        let storyboard = UIStoryboard(name: "Licenses", bundle: bundle)
-        
-        let licenseVC = storyboard.instantiateInitialViewController() as! LicensesViewController
+        let licenseVC = LicensesViewController.instantiate()
         licenseVC.title = "Licenses"
         licenseVC.loadLicenseList(name: "licenses", viewStyle: .URL)
         licenseVC.analytics = self
